@@ -1,0 +1,43 @@
+# Caesar Cipher
+
+def decode(message, offset):
+    result = ''
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    punctuation = ".,?'! "
+    for letter in message:
+        if letter in punctuation:
+            result += letter
+            continue
+        if letter in alphabet:
+            result += alphabet[(alphabet.find(letter) + offset) % 26]
+    return result
+    
+def encode(message, offset):
+    result = ''
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    punctuation = ".,?'! "
+    for letter in message:
+        if letter in punctuation:
+            result += letter
+            continue
+        if letter in alphabet:
+            result += alphabet[(alphabet.find(letter) - offset) % 26]
+    return result
+    
+# Solving a Caesar Cipher without knowing the shift value
+
+def brute_force_decode(message):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    for index in range(0,26):
+        result = ''
+        for letter in message:
+            if letter in alphabet:
+                result += alphabet[(alphabet.find(letter) + index) % 26]
+            else:
+                result += letter
+        print(result + "\n")
+        
+# The Vigenère Cipher
+
+
+    
