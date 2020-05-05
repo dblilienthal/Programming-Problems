@@ -3,7 +3,6 @@
  *integer value, i made both the buy and sell return -1 if you cannot make a profit
  */
 
-
 public class MaxProfit {
     
     public static void main(String[] args) {
