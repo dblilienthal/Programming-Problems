@@ -13,6 +13,13 @@ Output: [3,99,-1,-100]
 Explanation: 
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
+
+--------------------------------------------------------------------------------------------------------
+In order for us to shift our array by k amount of spots, we would need some sort of way to 
+loop through the array without getting an index error. I also realised that instead of shifting
+each index by k, we had to shift by the length of the array minus k in order for us to account
+for an array that had an odd amount of elements. We also had to use modulo as a way of adding 
+the right element to the result array. 
 """
 
 def rotate_array(input_array, k):
